@@ -1,0 +1,15 @@
+[
+  { "id": "intro",       "title": "Introduction",              "file": "content/01-intro.md" },
+  { "id": "menaces",     "title": "Comment on se fait pirater", "file": "content/02-menaces.md" },
+  { "id": "fuites",      "title": "Les fuites de données",     "file": "content/03-fuites-donnees.md" },
+  { "id": "mots-de-passe","title": "Mots de passe",            "file": "content/04-mots-de-passe.md" },
+  { "id": "mfa",         "title": "Double authentification",   "file": "content/05-mfa.md" },
+  { "id": "formulaires", "title": "Formulaires & inscriptions","file": "content/06-formulaires.md" },
+  { "id": "maj",         "title": "Mises à jour",              "file": "content/07-mises-a-jour.md" },
+  { "id": "navigateur",  "title": "Navigateur",                "file": "content/08-navigateur.md" },
+  { "id": "emails",      "title": "Emails & phishing",         "file": "content/09-emails.md" },
+  { "id": "cookies",     "title": "Cookies",                   "file": "content/10-cookies.md" },
+  { "id": "reseau",      "title": "VPN & wifi publics",        "file": "content/11-vpn-wifi.md" },
+  { "id": "applis",      "title": "Vos applis du quotidien",   "file": "content/12-applis-quotidien.md" },
+  { "id": "reflexes",    "title": "Les bons réflexes",         "file": "content/13-bons-reflexes.md" }
+]

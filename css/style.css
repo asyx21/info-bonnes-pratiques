@@ -1,0 +1,302 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+
+  --bg: #ffffff;
+  --bg-elev: #f7f8fa;
+  --text: #1a1d23;
+  --text-soft: #5b616e;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.06);
+
+  --sidebar-w: 280px;
+  --topbar-h: 56px;
+  --maxw: 760px;
+  --radius: 14px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Dark: auto (OS) unless a light override is set, and explicit dark */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent: #60a5fa;
+    --accent-soft: #1e293b;
+    --bg: #0f1115;
+    --bg-elev: #171a21;
+    --text: #e6e8ec;
+    --text-soft: #9aa1ad;
+    --border: #262a33;
+    --code-bg: #1b1f27;
+    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  --accent: #60a5fa;
+  --accent-soft: #1e293b;
+  --bg: #0f1115;
+  --bg-elev: #171a21;
+  --text: #e6e8ec;
+  --text-soft: #9aa1ad;
+  --border: #262a33;
+  --code-bg: #1b1f27;
+  --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+
+.icon-btn {
+  display: inline-grid; place-items: center;
+  width: 40px; height: 40px;
+  background: transparent; border: none; border-radius: 10px;
+  color: var(--text);
+}
+.icon-btn:hover { background: var(--bg-elev); }
+
+/* ---------- Top bar (mobile) ---------- */
+.topbar {
+  position: fixed; inset: 0 0 auto 0; z-index: 40;
+  height: var(--topbar-h);
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 8px;
+  padding-top: env(safe-area-inset-top);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-title { font-weight: 600; flex: 1; }
+.i-moon { display: none; }
+:root[data-theme="dark"] .i-sun,
+:root:not([data-theme="light"]) .i-sun { }
+/* toggle icon swap handled by JS via body[data-mode] */
+body[data-mode="dark"] .i-sun { display: none; }
+body[data-mode="dark"] .i-moon { display: block; }
+
+/* ---------- Layout ---------- */
+.layout { display: flex; height: 100%; }
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--bg-elev);
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.sidebar-head { padding: 20px 20px 8px; }
+.brand { font-weight: 700; font-size: 1.05rem; }
+.toc { list-style: none; margin: 8px 0; padding: 0 10px; flex: 1; }
+.toc li { margin: 2px 0; }
+.toc a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  text-decoration: none; color: var(--text-soft);
+  font-size: .94rem;
+}
+.toc a:hover { background: var(--bg); color: var(--text); }
+.toc a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.toc .num { font-variant-numeric: tabular-nums; opacity: .6; font-size: .8rem; min-width: 1.4em; }
+.sidebar-foot {
+  padding: 14px 20px; border-top: 1px solid var(--border);
+  font-size: .8rem; color: var(--text-soft);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.updated { font-size: .72rem; opacity: .7; }
+.updated:empty { display: none; }
+.foot-actions { display: flex; gap: 8px; align-items: stretch; }
+.pdf-btn {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 9px 12px; border-radius: 10px;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); font-size: .85rem; font-weight: 500;
+}
+.pdf-btn:hover { border-color: var(--accent); color: var(--accent); }
+.theme-side {
+  flex-shrink: 0; width: auto; padding: 0 12px;
+  border: 1px solid var(--border); background: var(--bg);
+}
+.theme-side:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Deck / slides ---------- */
+.deck { position: relative; flex: 1; min-width: 0; }
+.slides {
+  display: flex;
+  height: 100%;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.slides::-webkit-scrollbar { display: none; }
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow-y: auto;
+  padding: 56px 24px 96px;
+  display: flex; justify-content: center;
+}
+.slide-inner {
+  width: 100%; max-width: var(--maxw);
+  margin: auto 0;
+}
+
+/* Markdown content */
+.slide-inner h1 { font-size: clamp(1.7rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 .2em; letter-spacing: -.02em; }
+.slide-inner h2 { font-size: clamp(1.3rem, 3.5vw, 1.7rem); margin: 1.6em 0 .4em; }
+.slide-inner h3 { font-size: 1.1rem; margin: 1.3em 0 .3em; color: var(--text-soft); }
+.slide-inner p { margin: .6em 0; }
+.slide-inner a { color: var(--accent); }
+.slide-inner ul, .slide-inner ol { padding-left: 1.3em; margin: .6em 0; }
+.slide-inner li { margin: .35em 0; }
+.slide-inner blockquote {
+  margin: 1em 0; padding: .6em 1.1em;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elev); border-radius: 0 10px 10px 0;
+  color: var(--text-soft);
+}
+.slide-inner code {
+  font-family: var(--mono); font-size: .88em;
+  background: var(--code-bg); padding: .15em .4em; border-radius: 6px;
+}
+.slide-inner pre {
+  background: var(--code-bg); padding: 16px; border-radius: 12px;
+  overflow-x: auto; border: 1px solid var(--border);
+}
+.slide-inner pre code { background: none; padding: 0; }
+.slide-inner img { max-width: 100%; border-radius: 12px; }
+.slide-inner table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: .92rem; }
+.slide-inner th, .slide-inner td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+.slide-inner hr { border: none; border-top: 1px solid var(--border); margin: 1.6em 0; }
+.kicker { color: var(--accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: .78rem; }
+
+/* ---------- Nav arrows (desktop) ---------- */
+.nav-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 20;
+  width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  transition: opacity .2s, transform .1s;
+}
+.nav-arrow:hover { transform: translateY(-50%) scale(1.06); }
+.nav-arrow:active { transform: translateY(-50%) scale(.96); }
+.nav-arrow.prev { left: 18px; }
+.nav-arrow.next { right: 18px; }
+.nav-arrow[disabled] { opacity: 0; pointer-events: none; }
+
+/* ---------- Progress dots ---------- */
+.dots {
+  position: absolute; left: 0; right: 0; bottom: calc(18px + env(safe-area-inset-bottom));
+  display: flex; justify-content: center; gap: 8px; z-index: 20;
+  pointer-events: none;
+}
+.dots button {
+  pointer-events: auto;
+  width: 8px; height: 8px; padding: 0; border-radius: 50%;
+  border: none; background: var(--border); transition: transform .2s, background .2s;
+}
+.dots button.active { background: var(--accent); transform: scale(1.4); }
+
+/* ---------- Backdrop (mobile drawer) ---------- */
+.backdrop {
+  position: fixed; inset: 0; z-index: 30;
+  background: rgba(0,0,0,.4);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .layout { padding-top: var(--topbar-h); }
+  .sidebar {
+    position: fixed; z-index: 35; top: 0; bottom: 0; left: 0;
+    padding-top: calc(var(--topbar-h) + env(safe-area-inset-top));
+    transform: translateX(-100%);
+    transition: transform .28s cubic-bezier(.4,0,.2,1);
+    box-shadow: var(--shadow);
+  }
+  body.nav-open .sidebar { transform: translateX(0); }
+  .nav-arrow { display: none; }
+  .slide { padding: 24px 20px 88px; }
+}
+@media (min-width: 861px) {
+  .topbar { display: none; }
+  .layout { height: 100vh; }
+  .backdrop { display: none !important; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .slides { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- PDF export ----------
+   `.export-mode` (added by JS before printing) stacks every slide
+   vertically, one full page each. Also mirrored in @media print so
+   a plain Ctrl/Cmd+P works even without the button. */
+body.export-mode .topbar,
+body.export-mode .nav-arrow,
+body.export-mode .dots,
+body.export-mode .backdrop,
+body.export-mode .sidebar {
+  display: none !important;
+}
+body.export-mode { background: var(--bg); }
+body.export-mode .layout { display: block; padding: 0; height: auto; }
+body.export-mode .deck { position: static; }
+body.export-mode .slides {
+  display: block; height: auto; overflow: visible; scroll-snap-type: none;
+}
+body.export-mode .slide {
+  flex: none; width: 100%; height: auto;
+  min-height: 100vh;
+  padding: 8vh 9vw;
+  display: flex; align-items: center;
+  break-after: page; page-break-after: always;
+  break-inside: avoid;
+}
+body.export-mode .slide:last-child { break-after: auto; page-break-after: auto; }
+body.export-mode .slide-inner { margin: 0; max-width: 100%; }
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  /* Always export the LIGHT theme, whatever is shown on screen */
+  :root {
+    --accent: #2563eb !important; --accent-soft: #dbeafe !important;
+    --bg: #ffffff !important; --bg-elev: #f7f8fa !important;
+    --text: #1a1d23 !important; --text-soft: #5b616e !important;
+    --border: #e5e7eb !important; --code-bg: #f3f4f6 !important;
+  }
+  html, body { height: auto; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .topbar, .nav-arrow, .dots, .backdrop, .sidebar { display: none !important; }
+  .layout { display: block; padding: 0; height: auto; }
+  .deck { position: static; }
+  .slides { display: block; height: auto; overflow: visible; scroll-snap-type: none; }
+  .slide {
+    flex: none; width: 100%; min-height: 100vh; height: auto;
+    padding: 8vh 9vw; display: flex; align-items: center;
+    break-after: page; page-break-after: always; break-inside: avoid;
+  }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .slide-inner { margin: 0; max-width: 100%; }
+  .slide-inner pre, .slide-inner blockquote, .slide-inner table { break-inside: avoid; }
+}

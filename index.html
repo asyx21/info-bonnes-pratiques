@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>IT — Bonnes pratiques</title>
+  <meta name="description" content="Recueil de bonnes pratiques IT, présenté sous forme de slides." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Top bar (mobile) -->
+  <header class="topbar">
+    <button id="menuToggle" class="icon-btn" aria-label="Ouvrir le sommaire" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <span class="topbar-title">Bonnes pratiques</span>
+    <button class="icon-btn js-theme" aria-label="Changer de thème">
+      <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar / table of contents -->
+    <nav id="sidebar" class="sidebar" aria-label="Sommaire">
+      <div class="sidebar-head">
+        <span class="brand">📘 Bonnes pratiques IT</span>
+      </div>
+      <ol id="toc" class="toc"><!-- filled by JS --></ol>
+      <div class="sidebar-foot">
+        <div class="foot-actions">
+          <button id="pdfBtn" class="pdf-btn" title="Exporter en PDF (une slide par page)">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Exporter en PDF
+          </button>
+          <button class="icon-btn theme-side js-theme" aria-label="Changer de thème">
+            <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span id="progressLabel">–</span>
+        <span id="updated" class="updated"></span>
+      </div>
+    </nav>
+    <div id="backdrop" class="backdrop" hidden></div>
+
+    <!-- Slides -->
+    <main class="deck" id="deck" aria-live="polite">
+      <div id="slides" class="slides"><!-- filled by JS --></div>
+
+      <!-- Desktop nav arrows -->
+      <button id="prevBtn" class="nav-arrow prev" aria-label="Chapitre précédent">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button id="nextBtn" class="nav-arrow next" aria-label="Chapitre suivant">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <!-- Progress dots -->
+      <div id="dots" class="dots" role="tablist" aria-label="Progression"></div>
+    </main>
+  </div>
+
+  <script src="js/vendor/marked.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
