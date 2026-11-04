@@ -6,7 +6,7 @@ _Le mot de passe reste la première serrure, autant qu'elle soit solide !_
 
 ## Longueur > complexité
 
-- _Brute force: la **taille** compte ainsi que les caractères spéciaux._
+- _Brute force: la **taille** compte ainsi que le mix de caractères spéciaux._
 - _La robustesse de vos mots de passes diminue au fil des ans avec la puissance de calcul des ordinateurs qui augmente._
 
 ![Temps pour cracker un mot de passe](../assets/pass-2026.png "Cracker un mot de passe (2026)")  

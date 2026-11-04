@@ -4,7 +4,7 @@
 
 > _Protégez vos données des mauvaises intentions !_
 
-_Ce guide pour tous le monde vise à vous informer à propos des bases de sécurité informatique._
+_Ce guide destiné au grand publique vise à informer à propos des bases de sécurité informatique._
 
 ## Vous découvrirez dans ce guide
 - Des pages thématiques.

@@ -8,8 +8,7 @@
   { "id": "maj",         "title": "Mises à jour",              "file": "content/07-mises-a-jour.md" },
   { "id": "navigateur",  "title": "Navigateur",                "file": "content/08-navigateur.md" },
   { "id": "emails",      "title": "Emails & phishing",         "file": "content/09-emails.md" },
-  { "id": "cookies",     "title": "Cookies",                   "file": "content/10-cookies.md" },
-  { "id": "reseau",      "title": "VPN & wifi publics",        "file": "content/11-vpn-wifi.md" },
-  { "id": "applis",      "title": "Vos applis du quotidien",   "file": "content/12-applis-quotidien.md" },
-  { "id": "reflexes",    "title": "Les bons réflexes",         "file": "content/13-bons-reflexes.md" }
+  { "id": "reseau",      "title": "VPN & wifi publics",        "file": "content/10-vpn-wifi.md" },
+  { "id": "checklist",   "title": "Checklist",                 "file": "content/11-checklist.md" },
+  { "id": "alternatives","title": "Les outils alternatifs",    "file": "content/12-outil-alternatifs.md" }
 ]
