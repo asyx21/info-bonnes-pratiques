@@ -2,21 +2,20 @@
 
 # Double authentification (MFA)
 
-_À compléter : même avec un mot de passe volé, l'attaquant est bloqué à la 2ᵉ étape._
+_Même avec un mot de passe volé, l'attaquant est confronté à une seconde étape._
 
 ## C'est quoi
 
-- Un **2ᵉ facteur** en plus du mot de passe
-- « Quelque chose que je sais » + « quelque chose que j'ai »
+- MFA: Multi-Factor Authentication, 2FA: Two-Factor Authentication.
+- Un **2ᵉ facteur** en plus du mot de passe: même avec un mot de passe volé, l'attaquant est bloqué à la 2ᵉ étape
 
 ## Les méthodes, de la moins à la plus sûre
 
-- _À compléter : SMS (pratique mais faible)_
-- _Application d'authentification (TOTP)_
-- _Clé physique (FIDO2 / passkeys)_
+- _SMS (pratique mais peu fiable)_
+- _Application d'authentification (TOTP (Time-based One Time Password): Google Auth, Microsoft MFA)_
+- _Clé physique (FIDO2 / passkeys - TouchId, FaceId): le plus sûr !_
 
 ## Bonnes pratiques
 
-1. Activer le MFA sur les comptes **critiques** (email, banque, gestionnaire)
-2. Conserver les **codes de secours**
-3. _À compléter_
+1. Activer le MFA sur les comptes **critiques** (email, banque, gestionnaire de mot de passe)
+2. Conserver les **codes de secours** afin de pouvoir réinitialiser en cas de besoin (changement d'appareil, etc...)

@@ -2,20 +2,19 @@
 
 # Bonnes pratiques IT
 
-> _Une phrase d'accroche : pourquoi ce guide, en une ligne._
+> _Protégez vos données des mauvaises intentions !_
 
-_À compléter : de quoi parle ce guide, pour qui, et l'esprit (autonomie + sécurité au quotidien)._
+_Ce guide pour tous le monde vise à vous informer à propos des bases de sécurité informatique._
 
-## Comment lire ce guide
-
-- Un chapitre = un thème
-- Des conseils courts et actionnables
-- Navigation : **flèches**, **swipe** sur mobile, ou le **sommaire**
+## Vous découvrirez dans ce guide
+- Des pages thématiques.
+- Des explications avec exemples.
+- Des invitation à passer à l'action !
 
 ## Au programme
+A. Comprendre les menaces  
+B. Protéger ses comptes  
+C. Sécuriser ses outils du quotidien  
+D. Les bons réflexes
 
-1. Comprendre les menaces
-2. Protéger ses comptes
-3. Sécuriser ses outils du quotidien
-4. Hors de chez soi (réseau)
-5. Les bons réflexes
+> Navigation : **flèches**, **swipe** sur mobile, ou le **sommaire**
