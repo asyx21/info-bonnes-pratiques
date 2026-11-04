@@ -12,9 +12,9 @@ _Ce guide pour tous le monde vise à vous informer à propos des bases de sécur
 - Des invitation à passer à l'action !
 
 ## Au programme
-A. Comprendre les menaces  
-B. Protéger ses comptes  
-C. Sécuriser ses outils du quotidien  
-D. Les bons réflexes
+1. Comprendre les menaces.  
+2. Protéger ses comptes.  
+3. Sécuriser ses outils du quotidien.  
+4. Les bons réflexes.
 
 > Navigation : **flèches**, **swipe** sur mobile, ou le **sommaire**
