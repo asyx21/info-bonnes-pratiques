@@ -11,7 +11,7 @@ _En dehors de chez soi, on ne maîtrise plus le réseau._
 - Détournement vers un faux site (copié) pour voler vos identifiants.  
 
 
-## Le VPN : quand ça aide (et quand non)
+## Le VPN : quand ça aide (et quand ça n'aide pas)
 
 - ✅ Chiffre votre trafic sur un réseau non fiable. 
 - ✅ Masque votre IP au site visité. 
@@ -20,6 +20,6 @@ _En dehors de chez soi, on ne maîtrise plus le réseau._
 
 ## Bons réflexes en déplacement
 
-> - Éviter les opérations sensibles sur wifi public.  
+> - Éviter les opérations sensibles sur wifi public (mises à jour, banque, emails).  
 > - Préférer le **partage de connexion** mobile.  
 > - Si pas d'autre choix: utiliser un VPN de qualité (celui de votre employeur par exemple 😇).  

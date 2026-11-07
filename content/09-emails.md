@@ -23,7 +23,7 @@ _L'email reste la porte d'entrée n°1 des arnaques (phishing / hameçonnage)._
 - Ne jamais saisir ses identifiants depuis un lien reçu par mail.  
 - Dans le doute : aller sur le site soi-même **sans cliquer sur le lien !**  
 
-## Bonns réflexes
+## Bons réflexes
 
 > - Vérifier l'adresse de l'expéditeur et le lien.
 > - Ne pas cliquer, aller directement sur le site.

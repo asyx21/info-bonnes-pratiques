@@ -1,6 +1,6 @@
 <p class="kicker">Partie 3 · Outils du quotidien</p>
 
-# Navigateur
+# Navigateur Internet
 
 > - C'est la fenêtre principale sur internet, donc une cible privilégiée.  
 > - Votre navigateur sait tout sur vous !  
@@ -27,7 +27,7 @@
 
 ## Bonnes pratiques
 
-> - Utiliser un [navigateur respecteu](https://www.clubic.com/navigateur-web/guide-474076-meilleur-navigateur-prive.html) (Brave, Firefox, ...).  
+> - Utiliser un [navigateur respectueu](https://www.clubic.com/navigateur-web/guide-474076-meilleur-navigateur-prive.html) (Brave, Firefox, ...).  
 > - Changer le [moteur de recherche](https://www.justgeek.fr/meilleurs-moteurs-de-recherche-prives-129234/) par défaut (DuckDuckGo, Brave, ...).  
 > - Configurer des extensions éprouvées (Ex. [Privacy Badger](https://privacybadger.org/fr/), [uBlock origin](https://ublockorigin.com/fr), [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/fr/)).  
 > - Faire le ménage régulièrement: cookies, historique de navigation.  
