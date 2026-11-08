@@ -9,8 +9,8 @@ _L'email reste la porte d'entrée n°1 des arnaques (phishing / hameçonnage)._
 ### 1. L'adresse source
 
 - Domaines qui imitent (typosquatting): ex: `goggle.com` à la place de `google.com`
-- Regarder l'adresse **réelle** de l'expéditeur, pas le nom affiché. Exemple sur l'image: l'expéditeur semble être swisspass, mais le domaine de provenance n'est pas du tout `swisspass.ch`. 
-![L'expediteur semble être Swisspass](../assets/siwsspass.png "Usurpation de provenance d'email")
+- Regarder l'adresse **réelle** de l'expéditeur, pas le nom affiché. Exemple sur l'image: l'expéditeur semble être SBB CFF, mais le domaine de provenance n'est pas du tout `sbb.ch`. 
+![L'expediteur semble être SBB CFF](../assets/sbb-email.png "Usurpation de provenance d'email")
 
 ### 2. La langue du mail
 
